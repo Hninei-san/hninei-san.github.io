@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Our Team</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+        }
+        .image-with-text-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center; /* Centers the image horizontally */
+            align-items: center; /* Centers the image vertically */
+            overflow: hidden;
+            margin-bottom: 50px;
+
+           
+        }
+        .row.g-4 {
+            padding-top: 50px; /* Adds extra spacing before the cards */
+        }
+
+        .image {
+            width: 90%; /* Adjusted image size */
+            height: auto;
+            object-fit: cover;
+            filter: brightness(0.6);
+        }
+
+        .text-container {
+            position: absolute;
+            left: 0%; /* Move the text slightly left over the image */
+            top: 50%; /* Center the text vertically */
+            transform: translateY(-50%); /* Adjust the vertical positioning */
+            color: white;
+            width: 50%; /* Limit width to ensure text doesn't overflow */
+        }
+
+        .text-overlay {
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .static-text {
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+
+        .typing-animation {
+            font-size: 1.5rem;
+            font-weight: normal;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 4px solid rgba(255, 255, 255, 0.75);
+            display: inline-block;
+            animation: typing 4s steps(20) 1s 1 normal both, blinkCaret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blinkCaret {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+            
+
+        .team-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0px;
+            padding: 40px;
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+            border: 2px solid transparent; /* Default border is transparent */
+        }
+        .team-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 15px rgba(228, 8, 8, 0.6);
+            border-color: #e60000; /* Red border on hover */
+        }
+        .team-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            transition: opacity 0.3s ease-in-out;
+            position: relative;
+        }
+        /* Darken effect using ::after */
+        .team-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.3s ease-in-out;
+        }
+        .team-card:hover::after {
+            background: rgba(0, 0, 0, 1); /* Darkens fully */
+        }
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1;
+            width: 80%;
+        }
+        .team-card:hover .overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Our Team</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Meet the Team</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="team" class="container py-5">
+        <div class="image-with-text-container">
+            <img src="https://www.kmitl.ac.th/sites/default/files/styles/wide/public/2024-07/o4_0.jpg?itok=xH1Xuvy-" alt="Image" class="image">
+            <div class="text-container">
+                <h2 class="text-overlay">Meet Our Team</h2>
+                <p class="static-text">Being part of our Formula One and commercial </p>
+                <p class="typing-animation">our Student Placements will put undergraduates </p>
+            </div>
+        </div>
+        
+        
+   
+        
+        
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="team-card">
+                    <!-- Profile Image -->
+                    <img src="../assets/images/sone.png" class="team-img" alt="Sornpawee Jukmongkol">
+                    
+                    <!-- Name and Flag with proper spacing and alignment -->
+                    <div class="d-flex justify-content-center align-items-center mt-3">
+                        <h5 class="me-2" style="white-space: nowrap;">Sornpawee Jukmongkol</h5a> <!-- Ensures the name doesn't wrap -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Thailand.svg" alt="Thai Flag" style="width: 30px; height: 20px;">
+                    </div>
+                    
+                    <!-- Email -->
+                    <p class="text-center">65011546@kmitl.ac.th</p>
+                    
+                    <!-- Overlay with Responsibilities -->
+                    <div class="overlay">
+                        <h4>Responsibilities</h4>
+                        <p>Oversees project execution, ensures deadlines are met, and coordinates between teams.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="team-card">
+                    <!-- Profile Image -->
+                    <img src="../assets/images/mac.png" class="team-img" alt="Thitiphan Chenrukmatupoom">
+                    
+                    <!-- Name and Flag with proper spacing and alignment -->
+                    <div class="d-flex justify-content-center align-items-center mt-3">
+                        <h5 class="me-2" style="white-space: nowrap;">Thitiphan Chenrukmatupoom
+                           </h5> <!-- Ensures the name doesn't wrap -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Thailand.svg" alt="Thai Flag" style="width: 30px; height: 20px;">
+                    </div>
+                    
+                    <!-- Email -->
+                    <p class="text-center"> 65011598@kmitl.ac.th</p>
+                    
+                    <!-- Overlay with Responsibilities -->
+                    <div class="overlay">
+                        <h4>Responsibilities</h4>
+                        <p>Oversees project execution, ensures deadlines are met, and coordinates between teams.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 " data-aos="zoom-in" data-aos-delay="100">
+                <div class="team-card">
+                    <!-- Profile Image -->
+                    <img src="../assets/images/cherry.png" class="team-img" alt="Cherry Hlaing Kyaw">
+                    
+                    <!-- Name and Flag with proper spacing and alignment -->
+                    <div class="d-flex justify-content-center align-items-center mt-3">
+                        <h5 class="me-2" style="white-space: nowrap;">Cherry Hlaing Kyaw</h5> <!-- Ensures the name doesn't wrap -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Flag_of_Myanmar.svg" alt="Myanmar Flag"  style="width: 30px; height: 20px;">
+                    </div>
+                    
+                    <!-- Email -->
+                    <p class="text-center">65011289@kmitl.ac.th</p>
+                    
+                    <!-- Overlay with Responsibilities -->
+                    <div class="overlay">
+                        <h4>Responsibilities</h4>
+                        <p>Oversees project execution, ensures deadlines are met, and coordinates between teams.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 offset-md-2" data-aos="zoom-in" data-aos-delay="100">
+                <div class="team-card">
+                    <!-- Profile Image -->
+                    <img src="../assets/images/pk.png" class="team-img" alt="PK">
+                    
+                    <!-- Name and Flag with proper spacing and alignment -->
+                    <div class="d-flex justify-content-center align-items-center mt-3">
+                        <h5 class="me-2" style="white-space: nowrap;">Kyi Khaing Khant Soe</h5> <!-- Ensures the name doesn't wrap -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Flag_of_Myanmar.svg" alt="Myanmar Flag"  style="width: 30px; height: 20px;">
+                    </div>
+                    
+                    <!-- Email -->
+                    <p class="text-center">65011358@kmitl.ac.th</p>
+                    
+                    <!-- Overlay with Responsibilities -->
+                    <div class="overlay">
+                        <h4>Responsibilities</h4>
+                        <p>Oversees project execution, ensures deadlines are met, and coordinates between teams.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="team-card">
+                    <!-- Profile Image -->
+                    <img src="../assets/images/eisan.png" class="team-img" alt="Hnin Ei San">
+                    
+                    <!-- Name and Flag with proper spacing and alignment -->
+                    <div class="d-flex justify-content-center align-items-center mt-3">
+                        <h5 class="me-2" style="white-space: nowrap;">Hnin Ei San</h5> <!-- Ensures the name doesn't wrap -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Flag_of_Myanmar.svg" alt="Myanmar Flag" style="width: 30px; height: 20px;">
+                    </div>
+                    
+                    <!-- Email -->
+                    <p class="text-center">65011303@kmitl.ac.th</p>
+                    
+                    <!-- Overlay with Responsibilities -->
+                    <div class="overlay">
+                        <h4>Responsibilities</h4>
+                        <p>Oversees project execution, ensures deadlines are met, and coordinates between teams.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

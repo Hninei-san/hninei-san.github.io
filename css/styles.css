@@ -1,0 +1,417 @@
+body {
+    background-color: #121212;
+    color: white;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: '__bullFont_c48bf5', '__bullFont_Fallback_c48bf5';
+}
+
+/* .container-fluid {
+        width: 100vw; 
+        padding: 0 vw; 
+    } */
+
+/* html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #121212;
+    color: white;
+    font-family: '__bullFont_c48bf5', '__bullFont_Fallback_c48bf5';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.navbar {
+    background-color: transparent ; /* Default transparent background */
+    border: none;
+    box-shadow: none;
+    padding: 15px 0;
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    transition: background-color 0.3s ease; /* Smooth transition for background change */
+}
+
+.navbar-scrolled {
+    /* background-color: rgba(75, 14, 14, 0.8); */
+    background: hsla(0, 0%, 100%, 0.39);
+    /* background-color: rgb(117, 22, 22); */
+    backdrop-filter: blur(5px); /* Adjust the blur amount */
+ /* Change to a solid color (e.g., black with 80% opacity) */
+}
+.navbar-nav .nav-item {
+    margin-right: 20px; /* Adds space between navbar items */
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+    position: relative;
+    text-decoration: none;
+    color: white ;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #b30707; /* Changes text color on hover */
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #b30707; /* Red underline */
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%; /* Expands underline on hover */
+}
+
+.background-wrapper{
+    background-image: url('https://www.kmitl.ac.th/sites/default/files/styles/wide/public/2024-07/o4_0.jpg?itok=xH1Xuvy-');
+    filter: blur(10px);
+
+}
+
+
+
+
+.image {
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+.image-with-text-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 50px;
+    z-index: 1;
+}
+.text-container {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    width: 50%;
+}
+
+.text-overlay {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.static-text, .typing-animation {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.typing-animation {
+    white-space: nowrap;
+    overflow: hidden;
+    
+    border-right: 4px solid rgba(255, 255, 255, 0.75);
+    display: inline-block;
+    animation: typing 13s steps(13) infinite, blinkCaret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blinkCaret {
+    50% { border-color: transparent; }
+}
+
+
+
+
+
+
+/* Reduce card spacing */
+@media (max-width: 768px) {
+    .swiper-slide {
+        width: 90%;
+    }
+}
+
+
+
+
+
+.team-card h5{
+   
+    white-space: nowrap;  /* Prevent the name from wrapping onto the next line */
+    overflow: hidden;     /* Hide anything that exceeds the box */
+    text-overflow: ellipsis;  /* Add ellipsis when the name overflows */
+    font-size: 1.1rem;    /* Adjust font size for better readability */
+    line-height: 1.4; 
+    margin: 0;
+}
+.team-card {
+    margin: 20px 15px 20px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px; /* Added rounded corners */
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(228, 8, 8, 0.6);
+    border-color: #e60000; /* Red border on hover */
+}
+
+.team-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%; /* Added rounded corners for image */
+    border: 2px solid white;
+    transition: opacity 0.3s ease-in-out;
+    position: relative;
+}
+
+.team-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease-in-out;
+}
+
+.team-card:hover::after {
+    background: rgba(0, 0, 0, 1); /* Added darkening effect */
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+    width: 80%;
+}
+
+.team-card:hover .overlay {
+    opacity: 1;
+}
+
+
+
+
+
+.carousel-wrapper{
+    position: relative;
+    width: 100%;
+}
+/* Carousel Container */
+#news-slider {
+    margin-top: 80px;
+  
+}
+
+/* Individual Slide Styling */
+.post-slide {
+    background: #fff;
+    margin: 20px 15px 20px;
+    border-radius: 15px;
+    padding-top: 1px;
+    box-shadow: 0px 14px 22px -9px #bbcbd8;
+}
+
+.post-slide .post-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: -12px 15px 8px 15px;
+    margin-left: -10px;
+}
+
+.post-slide .post-img img {
+    width: 100%;
+    height: auto;
+    transform: scale(1, 1);
+    transition: transform 0.2s linear;
+}
+
+.post-slide:hover .post-img img {
+    transform: scale(1.1, 1.1);
+}
+
+.post-slide .over-layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background: linear-gradient(-45deg, rgba(6, 190, 244, 0.75) 0%, rgba(45, 112, 253, 0.6) 100%);
+    transition: all 0.50s linear;
+}
+
+.post-slide:hover .over-layer {
+    opacity: 1;
+    text-decoration: none;
+}
+
+.post-slide .over-layer i {
+    position: relative;
+    top: 45%;
+    text-align: center;
+    display: block;
+    color: #fff;
+    font-size: 25px;
+}
+
+/* Text Content Style */
+.post-slide .post-content {
+    background: #fff;
+    padding: 2px 20px 40px;
+    border-radius: 15px;
+}
+
+.post-slide .post-title a {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    display: inline-block;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+}
+
+.post-slide .post-title a:hover {
+    text-decoration: none;
+    color: #3498db;
+}
+
+.post-slide .post-description {
+    line-height: 24px;
+    color: #808080;
+    margin-bottom: 25px;
+}
+
+.post-slide .post-date {
+    color: #a9a9a9;
+    font-size: 14px;
+}
+
+.post-slide .post-date i {
+    font-size: 20px;
+    margin-right: 8px;
+    color: #CFDACE;
+}
+
+/* Read More Button */
+.post-slide .read-more {
+    padding: 7px 20px;
+    float: right;
+    font-size: 12px;
+    background: #2196F3;
+    color: #ffffff;
+    box-shadow: 0px 10px 20px -10px #1376c5;
+    border-radius: 25px;
+    text-transform: uppercase;
+}
+
+.post-slide .read-more:hover {
+    background: #3498db;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
+/* Owl Carousel Navigation Buttons */
+.owl-controls .owl-buttons {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-60%);
+}
+.owl-controls .owl-buttons .owl-prev,
+.owl-controls .owl-buttons .owl-next {
+    background: #fff;
+    position: fixed;  /* Fixed to the side of the page */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    padding: 0 18px;
+    border-radius: 50px;
+    font-size: 30px;
+    z-index: 9999; /* Ensure buttons stay on top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Position the left and right buttons */
+.owl-controls .owl-buttons .owl-prev {
+    left: 10px; /* Position left button on the left side */
+}
+
+.owl-controls .owl-buttons .owl-next {
+    right: 10px; /* Position right button on the right side */
+}
+
+
+.owl-controls .owl-buttons .owl-prev:after,
+.owl-controls .owl-buttons .owl-next:after {
+    content: "\f104";
+    font-family: FontAwesome;
+    color: #121212; /* Default color red for the icon/text */
+    font-size: 30px;
+}
+
+.owl-controls .owl-buttons .owl-next:after {
+    content: "\f105";
+}
+
+/* Hover effect: Only change icon/text color */
+.owl-controls .owl-buttons .owl-prev:hover:after,
+.owl-controls .owl-buttons .owl-next:hover:after {
+    color: #e60000; /* Change the text/icon color to red on hover */
+}
+
+
+
+
+
+
+/* Responsive Adjustments for Smaller Screens */
+@media only screen and (max-width: 1280px) {
+    .post-slide .post-content {
+        padding: 0px 15px 25px 15px;
+    }
+}
