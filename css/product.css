@@ -1,0 +1,441 @@
+
+.image {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+.project-image-with-text-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 50px;
+  z-index: 1;
+}
+.text-container {
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  width: 50%;
+}
+
+.text-overlay {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.static-text, .typing-animation {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.typing-animation {
+  white-space: nowrap;
+  overflow: hidden;
+  
+  border-right: 4px solid rgba(255, 255, 255, 0.75);
+  display: inline-block;
+  animation: typing 10s steps(13) infinite, blinkCaret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkCaret {
+  50% { border-color: transparent; }
+}
+
+
+
+
+
+
+
+.title {
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+
+
+
+
+/* Photo slider container */
+.photo-slider {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  position: relative;
+  max-width: 600px;
+  margin: right;
+  
+  
+}
+
+/* Image styling */
+.photo {
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+  
+}
+
+.photo img {
+  width: 200px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: 0.3s ease-in-out;
+  
+}
+
+/* Center photo (full size) */
+.center img {
+  width: 250px;
+  height: 450px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+}
+
+/* Left and Right images (slightly visible) */
+.left {
+  transform: translateX(-20px) scale(0.9);
+  
+  
+}
+
+.right {
+  transform: translateX(20px) scale(0.9);
+  
+}
+
+/* Hover effect to bring side images forward */
+.photo:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.photo:hover img {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+/* Container for the 3 blocks */
+.function-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Styling for each function block */
+.function-box {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+
+
+  border: 2px solid transparent;
+}
+
+
+/* Icon Styling */
+.function-box i {
+  font-size: 40px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Text Styling */
+.function-box h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Description Styling */
+.function-box p {
+  font-size: 14px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover effect for blocks */
+.function-box:hover {
+  /* transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); */
+  
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(228, 8, 8, 0.6);
+  border-color: #e60000; /* Red border on hover */
+
+
+}
+
+.function-box:hover i {
+  transform: translateY(-5px) scale(1.1);
+}
+
+.function-box:hover h3 {
+  transform: translateY(-5px);
+}
+
+.function-box:hover p {
+  opacity: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .function-container {
+    justify-content: center;
+  }
+
+  .function-box {
+    width: 300px;
+    height:300px;
+  }
+  .photo-slider {
+    display: none;
+  }
+
+}
+
+
+@media (max-width: 1200px) {
+  
+  .our-story p {
+    
+    padding-left: 15px;
+    padding-right:15px;
+}
+  .photo-slider {
+    width: 50%;
+  }
+  .photo-slider {
+    max-width: 90%;
+    gap: 10px;
+  }
+
+  .photo img {
+    width: 120px;
+    height: 200px;
+  }
+
+  .center img {
+    width: 150px;
+    height: 250px;
+  }
+
+  .left, .right {
+    transform: translateX(0) scale(0.85);
+    opacity: 0.5;
+  }
+
+}
+
+
+
+
+@media (max-width: 480px) {
+  .function-container {
+    /* flex-direction: column;
+    align-items: center; */
+    justify-content: center;
+  }
+
+  .function-box {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+  .photo-slider{
+    display: none;
+  }
+  
+
+}
+
+
+
+
+
+/* Section styling */
+.our-story {
+  padding-top: 50px ;
+ 
+  
+}
+.story-content{
+  background-color:  rgba(255, 255, 255, 0.1);;
+  padding-top: 50px ;
+  padding-bottom: 50px;
+}
+
+h4 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.our-story p {
+  font-size: 1.2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Problem Statement Cards */
+.problem-statement {
+  margin-top: 40px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .problem-cards {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  h4{
+      font-size: 2rem;
+  }
+
+  .our-story p {
+      font-size: 1rem;
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+
+  .card {
+      width: 90%;
+  }
+}
+
+
+
+
+/* Our Story Section */
+
+
+/* Contact Us Section */
+.contact-us {
+  background: #1e1e1e;
+  padding: 30px;
+  width: 100%;
+  
+  text-align: center;
+  margin-top: auto;
+  
+  
+}
+
+.contact-us h2 {
+  font-size: 2rem;
+  color: rgba(228, 8, 8, 0.6);
+  margin-bottom: 10px;
+}
+
+.contact-us p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 90%;
+  max-width: 400px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form button {
+  background: rgba(228, 8, 8, 0.6);;
+  color: #121212;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: rgba(228, 8, 8, 0.6);;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .our-story, .contact-us {
+      width: 80%;
+      padding: 25px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+      width: 100%;
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

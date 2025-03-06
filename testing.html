@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Design | Text & App Photos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            overflow-x: hidden;
+            height: 100vh;
+            display: flex;
+        }
+        
+        .split-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+        }
+        
+        /* Left Section - Animated Text */
+        .text-section {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5rem;
+            background-color: #f8f8f8;
+            height: 100%;
+        }
+        
+        .animated-text {
+            font-size: 3rem;
+            font-weight: 300;
+            line-height: 1.3;
+            color: #333;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards;
+            animation-delay: calc(var(--delay) * 0.3s);
+        }
+        
+        .text-highlight {
+            font-weight: 600;
+            color: #0066cc;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #666;
+            margin-top: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards;
+            animation-delay: 1.2s;
+        }
+        
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Right Section - Photo Showcase */
+        .photo-section {
+            width: 30%;
+            height: 60%;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-right: 5%;
+        }
+        
+        .photo-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .photo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        
+        .photo.active {
+            opacity: 1;
+        }
+        
+        /* App Frame Elements */
+        .app-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        .app-header {
+            height: 40px;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #eeeeee;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+        }
+        
+        .app-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .app-controls {
+            margin-left: auto;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .app-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #ddd;
+        }
+        
+        /* Photo Navigation */
+        .photo-nav {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            z-index: 10;
+        }
+        
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot.active {
+            background-color: #0066cc;
+            transform: scale(1.2);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+            }
+            
+            .text-section {
+                width: 100%;
+                height: 60vh;
+                padding: 2rem;
+            }
+            
+            .photo-section {
+                width: 80%;
+                height: 30vh;
+                margin: 5% auto;
+            }
+            
+            .animated-text {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="split-container">
+        <!-- Left Section - Animated Text -->
+        <div class="text-section">
+            <h1 class="animated-text" style="--delay: 0.1">
+                Simplicity is the ultimate <span class="text-highlight">sophistication</span>
+            </h1>
+            <h1 class="animated-text" style="--delay: 0.4">
+                Less is <span class="text-highlight">more</span>
+            </h1>
+            <p class="description">
+                Our photo app focuses on creating beautiful, functional experiences that let your memories shine. Browse through our gallery to see how we bring this philosophy to life.
+            </p>
+        </div>
+        
+        <!-- Right Section - Photo Showcase (App Style) -->
+        <div class="photo-section">
+            <!-- App Frame -->
+            <div class="app-frame">
+                <div class="app-header">
+                    <div class="app-title">Photo Gallery</div>
+                    <div class="app-controls">
+                        <div class="app-dot"></div>
+                        <div class="app-dot"></div>
+                        <div class="app-dot"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="photo-container" id="photoContainer">
+                <img src="/api/placeholder/800/600" alt="Minimalist Design" class="photo active">
+                <img src="/api/placeholder/800/600" alt="Clean Architecture" class="photo">
+                <img src="/api/placeholder/800/600" alt="Modern Interiors" class="photo">
+                <img src="/api/placeholder/800/600" alt="Elegant Spaces" class="photo">
+            </div>
+            
+            <div class="photo-nav" id="photoNav">
+                <span class="nav-dot active" data-index="0"></span>
+                <span class="nav-dot" data-index="1"></span>
+                <span class="nav-dot" data-index="2"></span>
+                <span class="nav-dot" data-index="3"></span>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Photo Showcase
+            const photos = document.querySelectorAll('.photo');
+            const navDots = document.querySelectorAll('.nav-dot');
+            let currentPhotoIndex = 0;
+            
+            function showPhoto(index) {
+                // Hide all photos
+                photos.forEach(photo => photo.classList.remove('active'));
+                
+                // Show selected photo
+                photos[index].classList.add('active');
+                
+                // Update nav dots
+                navDots.forEach(dot => dot.classList.remove('active'));
+                navDots[index].classList.add('active');
+                
+                // Update current index
+                currentPhotoIndex = index;
+            }
+            
+            // Set up automatic slideshow
+            function nextPhoto() {
+                const nextIndex = (currentPhotoIndex + 1) % photos.length;
+                showPhoto(nextIndex);
+            }
+            
+            // Set up navigation dots
+            navDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    showPhoto(index);
+                    
+                    // Reset timer when manually changing photos
+                    clearInterval(slideshowInterval);
+                    slideshowInterval = setInterval(nextPhoto, 4000);
+                });
+            });
+            
+            // Start automatic slideshow
+            let slideshowInterval = setInterval(nextPhoto, 4000);
+            
+            // Reset animations when page is refreshed or when scrolled back into view
+            function resetAnimations() {
+                const animatedElements = document.querySelectorAll('.animated-text, .description');
+                animatedElements.forEach(el => {
+                    el.style.animation = 'none';
+                    setTimeout(() => {
+                        el.style.animation = '';
+                    }, 10);
+                });
+            }
+            
+            // Observe visibility changes
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        resetAnimations();
+                    }
+                });
+            });
+            
+            observer.observe(document.querySelector('.text-section'));
+        });
+    </script>
+</body>
+</html>
