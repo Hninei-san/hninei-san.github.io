@@ -131,7 +131,7 @@ body {
     
     border-right: 4px solid rgba(255, 255, 255, 0.75);
     display: inline-block;
-    animation: typing 13s steps(13) infinite, blinkCaret 0.75s step-end infinite;
+    animation: typing 10s steps(13) infinite, blinkCaret 0.75s step-end infinite;
 }
 
 @keyframes typing {
