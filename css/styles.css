@@ -128,21 +128,15 @@ body {
 .typing-animation {
     white-space: nowrap;
     overflow: hidden;
-    
-    border-right: 4px solid rgba(255, 255, 255, 0.75);
     display: inline-block;
-    animation: typing 10s steps(13) infinite, blinkCaret 0.75s step-end infinite;
+    animation: typing 2s steps(8) infinite alternate;
+    max-width: fit-content;
 }
 
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
 }
-
-@keyframes blinkCaret {
-    50% { border-color: transparent; }
-}
-
 
 
 
@@ -180,7 +174,7 @@ body {
 }
 
 .team-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     box-shadow: 0px 0px 15px rgba(228, 8, 8, 0.6);
     border-color: #e60000; /* Red border on hover */
 }
